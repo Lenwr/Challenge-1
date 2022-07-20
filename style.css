@@ -46,4 +46,10 @@ body {
   .box .texte .bouton p{
     display: inline;
     color: white;
+    margin-right: 30px;
+  }
+
+  .box .texte .bouton img{
+    display: inline;
+    margin-left: 40px;
   }
