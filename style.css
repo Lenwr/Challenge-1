@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: bisque;
+}
+
+.box {
+  position: absolute;
+  width: 600px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color:white;
+  display: flex;
+}
+
+.box .picture {
+  width: 250px;
+  flex: 0 0 280px;
+}
+
+.box .picture img {
+    max-width: 100%;
+  }
+
+  .box .texte {
+    margin: 20px;
+    background-color: blanchedalmond ;
+    display: inline;
+  }
+
+  .box .texte .bouton {
+    background-color: green;
+    position: absolute;
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+   
+  }
+
+  .box .texte .bouton p{
+    display: inline;
+    color: white;
+  }
