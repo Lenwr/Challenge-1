@@ -1,55 +1,141 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
   background-color: bisque;
+  font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .box {
-  position: absolute;
-  width: 600px;
-  height: 450px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  background-color:white;
   display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  max-height: 450px;
+  border-radius: 10px;
+  background-color: white;
 }
 
-.box .picture {
-  width: 250px;
-  flex: 0 0 280px;
-}
+@media only screen and (max-width: 480px)
+{
+  .box {
+    max-width: 100vw;
+  }
 
-.box .picture img {
-    max-width: 100%;
+  .box .picture {
+    flex: 1 0 auto;
   }
 
   .box .texte {
-    margin: 20px;
-    background-color: blanchedalmond ;
-    display: inline;
+    flex: 1;
+    max-width: 480px;
   }
 
-  .box .texte .bouton {
-    background-color: green;
-    position: absolute;
-    width: 200px;
-    height: 25px;
-    border-radius: 10px;
-    bottom: 20px;
-   
-  }
+}
 
-  .box .texte .bouton p{
-    display: inline;
-    color: white;
-    margin-right: 30px;
-  }
+.box .picture {
+  flex: 1 1 300px;
+  height: 450px;
+  border-radius: 10px 0 0 10px;
+  background-size: cover;
+  background-image: url("images/image.jpg");
+}
 
-  .box .texte .bouton img{
-    display: inline;
-    margin-left: 40px;
-  }
+.box .picture img {
+  max-width: 100%;
+  border-radius: 10px 0 0 10px;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.box .texte {
+  flex: 1 1 300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.box .texte .heading {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #9c9ba3;
+  padding-bottom: 24px;
+}
+
+.box .texte .title {
+  font-family: "Playfair Display", serif;
+  padding-bottom: 24px;
+}
+
+.box .texte .content {
+  color: #9c9ba3;
+  padding-bottom: 24px;
+}
+
+.box .texte .price {
+  font-family: "Playfair Display", serif;
+  display: flex;
+  align-items: center;
+  color: #3e8168;
+  padding-bottom: 24px;
+}
+
+.box .texte .price h1 {
+  font-family: "Playfair Display", serif;
+}
+
+.box .texte .price .old-price {
+  color: #9c9ba3;
+  margin-left: 28px;
+  text-decoration: line-through;
+}
+
+.box .texte .bouton {
+  display: flex;
+  font-size: bold;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 60px;
+  background-color: #3e8168;
+  border-radius: 10px;
+}
+
+.box .texte .bouton p {
+  color: white;
+}
+
+.box .texte .bouton img {
+  max-width: 20px;
+  margin-right: 16px;
+}
